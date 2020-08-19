@@ -1,0 +1,26 @@
+<script>
+
+// when we sent function through json then it will loose scope.
+
+// stringify() will remove the any function from JS object, both key and value.
+var obj = { name: "John", age: function () {return 30;}, city: "New York"};
+
+var jsonstr = JSON.stringify(obj);
+alert(jsonstr);
+
+
+// if convert function in string before running stringify then this can be ommited.
+
+var objreturns = { name: "John", age: function () {return 30;}, city: "New York"};
+
+// toString() convert element/values to string.
+objreturns.age = objreturns.age.toString();
+
+var jsonstrreturns = JSON.stringify(objreturns);
+alert(jsonstrreturns);
+
+
+
+
+
+</script>

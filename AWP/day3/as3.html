@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <script>
+            function checkPalindrome(str) {
+                if (str.length == 0) {
+                    document.getElementById("isPalindrome").innerHTML = "Please write something.";
+                    return;
+                }
+
+                xhtp = new XMLHttpRequest();
+
+                url = "http://localhost/day3/as3.php?str=" + str;
+
+                xhtp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("isPalindrome").innerHTML = this.responseText;
+                    }
+                };
+
+                xhtp.open("GET", url, true);
+                xhtp.send();
+
+            }
+        </script>
+    </head>
+    <body>
+        Type a String <input type="text" onkeyup="checkPalindrome(this.value)" />
+        <p>Is Palindrome: <span id="isPalindrome">Please write something.</span></p>
+    </body>
+</html>

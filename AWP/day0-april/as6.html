@@ -1,0 +1,57 @@
+<html>
+
+    <head>
+        <style>
+            .red {
+                color: red;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <!--
+    ground rules 
+
+    1. write css only in head level and not at element level.
+
+    attempt the following.
+
+    1. write h1 , h2 and h3 all in red color by using a class.
+    2. write a single line in h3 , this is important, but important
+    should appear in red color  hint use span around important.
+    3. write a form indicating the following.
+    1. name -- textbox.
+    2. age -- textbox
+    3. radio button for location, india, and outside india.
+    4. interests check box, reading, writing, others.
+    5. textbox area, 
+    6. one submit button whose value is "send information for server".
+    7. one button whose value is "send information for client"
+    8. in form action ensure action is process.html method is post.
+    9. in process.html write a basic html whose content is.
+        "action being html is not a good thing, it must be a server side component, but currently for fun this is ok "
+
+
+    -->
+
+    <h1 class="red">Binod.</h1>
+    <h1 class="red">Binod.</h1>
+    <h1>This is <span class="red">important</span>.</h1>
+
+    <form action="process.html" method="post">
+       Name: <input type="text" name="name"/><br>
+       Age: <input type="text" name="age"/><br>
+       <input type="radio" name="location" value="India" /> India<br>
+       <input type="radio" name="location" value="Outside India"/> Outside India<br>
+       <input type="checkbox" name="interest" value="reading"/> Reading  
+       <input type="checkbox" name="interest" value="writing"/> Writing   
+       <input type="checkbox" name="interest" value="others"/> Others   <br>
+       <textarea name="text" rows="10" cols="50"></textarea><br>
+       <input type="submit" value="Send information for server"/>
+       <input type="button" value="Send information for client"/>
+    </form>
+
+    <body>
+</html>

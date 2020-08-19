@@ -1,0 +1,24 @@
+<script>
+
+// parsing date in json string as data is not a type in json
+
+alert("Here, I'm with only script tag");
+
+var jsonstr = '{ "name":"John", "birth":"1986-12-14", "city":"New York"}';
+
+alert(jsonstr);
+
+var parsed = JSON.parse(jsonstr, function(key, value) {
+	if (key == "birth") {
+		return new Date(value);
+	} else {
+		return value;
+	}
+});
+
+
+alert(parsed.birth);
+alert(typeof parsed.birth);
+
+
+</script>

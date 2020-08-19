@@ -1,0 +1,21 @@
+<html>
+<script>
+
+// getting json item from local storage.
+var getJson = localStorage.getItem('jsonItem');
+
+
+// converting it to js object
+var jsonToJs = JSON.parse(getJson);
+
+function getItemDetails(jsonToJs) {
+	return jsonToJs.name + " " + jsonToJs.city;
+}
+
+alert(getItemDetails(jsonToJs));
+
+
+
+
+</script>
+</html>

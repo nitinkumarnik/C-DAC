@@ -1,0 +1,98 @@
+<html>
+
+<head>
+	<script>
+
+		function doubleIt() {
+
+			//below line we created an object of XMLHttpRequest
+			//object name is xhr.
+
+			var xhr = new XMLHttpRequest();//inbuilt object which helps in talking
+			//to the server in the backgrond way.
+			var url = "http://localhost/day2/ajax1.php";// this is just a string
+			// we are going to tell the xhr object which is server sid ecomponnet
+			//it needs  to talk to.
+			var t1 = document.getElementById("t1");
+			var pm = "?tbn=" + t1.value + "&btwt=1";
+			url = url + pm;
+
+
+			//for the below code look at the paintbrush picture xhr event.
+			xhr.onreadystatechange = function () {
+				if (this.readyState == 4 && this.status == 200) {
+
+					var datagotfromserver = this.responseText;
+
+					//responseText variable will have data given by the php.
+					var mess = document.getElementById("mess");
+					mess.innerHTML = datagotfromserver;
+
+
+				}
+			};
+
+			xhr.open("GET", url, true);
+			//get means mode of request, in case yours is post, you //mention it as post, currently dont bother about post
+			//do it with get.
+
+			xhr.send();//this is place where actual request is made.
+
+		}
+
+
+		function tripleIt() {
+
+			var xhr = new XMLHttpRequest();
+			var t1 = document.getElementById("t1");
+			var url = "http://localhost/day2/ajax1.php";//currently does not have parameters
+			var pm = "?tbn=" + t1.value + "&btwt=2";
+			url = url + pm;//query stirng is build properly.
+			//alert(url);
+			//we have the url with parameters ready.
+			//set up the onreadySTateChange event.
+			xhr.onreadystatechange = function () {
+
+				//come inside this function only after event occurs.
+				if (this.readyState == 4 && this.status == 200) {
+					//alert(this.responseText);// prove data is coming properly first.
+					var mess = document.getElementById("mess");
+					mess.innerHTML = this.responseText;
+
+
+				}
+			}
+
+			xhr.open("GET", url, true);
+			//get means mode of request, in case yours is post, you //mention it as post, currently dont bother about post
+			//do it with get.
+
+			xhr.send();//this is place where actual request is made.
+
+
+			// logic has to be done by php and php has to give you the data.
+
+			//mess id is not a textbox
+			//it is an id of span or some non textbox component
+			//to assign some value into the mess area
+
+			// we have this property called innerHTML
+
+			//t1.value will get updated in the part of the html page where id is mess.
+		}
+	</script>
+
+</head>
+
+<body>
+
+	<Br /> when we get struck program we do to know concept should be small
+	<Br />
+	number <input type="text" id="t1" />
+	<span id="mess"> one day we will show message</span>
+	<Br /><input type="button" value="Double It" onClick="doubleIt()" />
+	<input type="button" value="Triple It" onClick="tripleIt()" />
+
+</body>
+
+</html>

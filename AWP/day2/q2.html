@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <script>
+	  function noOfVowCon() {
+		var str = document.getElementById("txt").value;
+		
+		var words = str.split(' ');
+		var resstr = "";
+		
+		for (var i=0; i<words.length; i++) {
+		  var vow = 0;
+		  var con = 0;
+		  for (char of words[i]) {
+		    if (char == 'a' || char == 'e' || char == 'i' || char == 'o' || char == 'u'){
+			  vow = vow + 1;
+		    } 
+		  }
+		  resstr = resstr + `${words[i]} contains ${vow} vowels and ${words[i].length - vow} consonants <br>`;
+		}
+		
+		
+		document.getElementById("result").innerHTML = resstr;
+	  }
+	  
+	  function sortIt() {
+		var str = document.getElementById("txt").value;
+		var words = str.split(' ');
+		//words = words.sort();
+		//console.log(words);
+		// for (var i=0; i<words.length-1; i++) {
+		//   console.log(words[i].length + " "+ words[i+i].length);
+		//   if (words[i].length > words[i+i].length) {
+		// 	var temp = words[i];
+		// 	words[i] = words[i+1];
+		// 	words[i+1] = temp;
+		//   }
+		//   resstr = resstr + `${words[i]} `;
+		// }
+		words.sort(function(a, b) {return a.length - b.length});
+		document.getElementById("sorting").innerHTML = words.join(' ');
+		
+	  }
+	  
+	</script>
+  </head>
+  <body>
+    <h1>Count vowels and consonants.</h1>
+	Text: <input type="text" id="txt"/>
+	<input type="button" id="countit" onclick="noOfVowCon()" value="Start Counting"/>
+	<input type="button" id="sortit" onclick="sortIt()" value="Sort"/>
+	<br><br>
+	<h2>Count</h2>
+	<span id="result">No of counts shown here.</span>
+	<h2>Sort</h2>
+	<p id="sorting"></p>
+  </body>
+</html>
