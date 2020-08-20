@@ -1,0 +1,35 @@
+<html>
+	<head>
+	<!-- jquery file from the cdn -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+	
+	<script>
+		// when ready event occur call function f1()
+		$(document).ready(f1);
+		
+		function f1() {
+			
+			// alert("Is it jquery");
+			
+			$("#btn1").click(function(){
+			
+				// getting value from document
+				var num = $("#num").val();
+				
+				// logic for odd or even
+				if (num%2 == 0)
+					// writing on document
+					$("#res").html("Even");
+				else
+					$("#res").html("Odd");
+				
+			});
+				
+		};
+	</script>
+	</head>
+	<body>
+	Number: <input type="text" id="num" /> <span id="res"></span> <br>
+	<input type="button" id="btn1" value="Odd or Even"/>
+	</body>
+</html>

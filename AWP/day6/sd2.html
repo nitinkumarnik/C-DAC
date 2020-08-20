@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>assignment</title>
+        <style>
+            #tx1{
+                height:50px;
+                width:250px;
+            }
+            #btn1,#btn2{
+                height: 20px;
+                height: 50px;
+            }
+        
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(f1);
+            function f1(){
+                $("#btn1").click(function(){
+                var str=$("#tx1").val();
+                var word=str.split(' '); // added space in (' ')
+                var res="";
+                for(var i=0;i<word.length;i++){
+                    var v=0;
+                    var c=0;
+                    for(char of word[i])
+                    
+                    {
+                        if (char == 'a' || char == 'e' || char == 'i' || char == 'o' || char == 'u'|| char == 'A'|| char == 'E'|| char == 'I'|| char == 'O'|| char == 'U'){
+					v=v+1;
+				        }
+                    }
+                    res=res+`${word[i]} contains ${v} vowels and ${word[i].length - v} consonants <br>`;
+					
+					
+                   //res=res+`${str} contains ${v} vowels and ${str.length - v} consonants <br>`;
+                    $("#result").html(res); // added it inside for loop
+                }
+                
+            });
+            $("#btn2").click(function(){
+                var str=$("#tx1").val();
+                var word=str.split(' '); // added space in (' ')
+                word.sort(function(a,b){
+                    return a.length-b.length;
+
+                });
+                $("#sort").html(word.join(' ')); // changed this line
+            });
+            }
+        </script>
+    </head>
+    <body>
+        <h1>TO count vowel and consonanat</h1></br>
+        <input type="text" id="tx1" placeholder="enter text here"/>
+        <input type="button" id="btn1" value="count"/>
+        <input type="button" id="btn2" value="sort"/></br>
+        <h2> Count</h2>
+        <span id="result">No of count shown here...</span>
+        <h2>Sort </h2>
+        <p id="sort"></p>
+    </body>
+</html>

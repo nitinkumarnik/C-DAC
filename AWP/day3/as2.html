@@ -3,22 +3,25 @@
         <script>
             function nextMultiples(num) {
                 
-                
+                alert(1);
+				
                 var xhtp = new XMLHttpRequest();
                 
-                var url = "http://localhost/day3/as2.php";
-                var param = "?num=" + num;
-                url = url + param;
+                var url = "http://localhost/awp/day3/as2.php?z=" + num;
+                //var param = "?z=" + num;
+				
+                // url = url + param;
                 
                 xhtp.onreadystatechange = function() {
-                    
+                    alert("this.readyState " + this.readyState)
                     if (this.readyState == 4 && this.status == 200) {
+						alert(4);
                         document.getElementById("showMultiple").innerHTML = this.responseText;  
                     }
                 };
-                
+                alert(2);
                 xhtp.open("GET", url, true);
-                
+                alert(3);
                 xhtp.send();
                 
 
