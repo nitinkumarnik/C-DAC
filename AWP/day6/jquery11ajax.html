@@ -23,14 +23,26 @@
 				$("#btn").click(function() {
 					// alert("yo.!");
 					
-					var jsonstr = '{ "empno": 3, "location":"blr", "deptid":3}';
+					
+					// if sent location blr, we get 1
+					// if location dli, we get 2
+					// all other location, we get 0
+					var jsonstr = '{ "empno": 3, "location":"dli", "deptid":3}';
 					
 					var x = {
 						type: "post",
 						dataType: "json",
 						url: "jquery11.php",
-						data: {thekey:},
+						data: {thekey:jsonstr},
+						success: function(fromServer) {
+							alert(fromServer);
+						},
+						error: function(e) {
+							alert("Troble Maker...");
+						}
 					};
+					
+					$.ajax(x);
 					
 				});
 			 
