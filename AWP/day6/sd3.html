@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>assignment5</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(f1);
+            function f1(){
+                $("#btn1").click(function(){
+                    var dts={"n1":3,"n2":3,"oper":"*"};
+                    var x={
+                        type:"post",
+                        dataType:"json",
+                        url:"sd3.php",
+                        data:{xyz:JSON.stringify(dts)},
+                        success:function(gvs){
+                            //alert(JSON.stringify(gvs));
+                            alert(gvs.result);
+                        },
+                        error:function(e){
+                            alert("trouble");
+                        }
+                    };
+                    $.ajax(x);
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <input type="button" value=" click it" id="btn1"/>
+    </body>
+</html>

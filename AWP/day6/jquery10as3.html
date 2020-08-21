@@ -1,0 +1,65 @@
+<html>
+<!--
+- html: two checkbox (*)
+- html: heading and two p to show result (*)
+- jquery: document ready (*)
+- jquery: global array of 20 random number (*)
+- html: to show the array (*)
+- jquery: five multiple function
+- jquery: seven multiple funtion
+-->
+
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script>
+		$(f1);
+		
+		function f1() {
+		
+			var arr = [];
+			// arrays for five and seven multiples
+			var arrFive = [];
+			var arrSeven = [];
+			
+			for (var i=0; i<20; ++i) {
+				arr.push(Math.floor(Math.random() * 99));
+				if (arr[i] % 5 == 0)
+					arrFive.push(arr[i]);
+				else if (arr[i] % 7 == 0)
+					arrSeven.push(arr[i]);
+			}
+			$("#arrNum").html(arr.join(', '));
+			
+			
+			// alert(arrSeven.join(', '));
+			
+			
+			$("#five").click(function() {
+				if(this.checked)
+					$("#fiveMultiples").html(arrFive.join(', '));
+				else 
+					$("#fiveMultiples").html("");
+			});
+			
+			$("#seven").click(function() {
+				if(this.checked)
+					$("#sevenMultiples").html(arrSeven.join(', '));
+				else
+					$("#sevenMultiples").html("");
+			});
+		
+		
+		};
+		
+		</script>
+	</head>
+	<body>
+	<h2>Numbers: <span id="arrNum"></span></h2>
+	<h2>Choice is yours...</h2>
+	<input type="checkbox" id="five"/>Five Multiples	
+	<input type="checkbox" id="seven"/>Seven Multiples
+	<br>
+	<p id="fiveMultiples"></p>
+	<p id="sevenMultiples"></p>
+	</body>
+</html>

@@ -1,0 +1,73 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script>
+		/*
+		 * 1. document ready
+		 * 1a. set an event like click
+		 * 2. take text-value from the html document
+		 * 3. make js object
+		 * 4. make ajax object
+		 * 5. ajax call
+		 * 6. recieve json str on php
+		 * 7. decode json str to php object
+		 * 8. do the business logic
+		 * 9. make assoc array
+		 * 10. encode to json str
+		 * 10a. send to the client
+		 * 11. recieve it in ajax object (succes:function(here))
+		 * 12. show it on html document
+		 */
+		 
+		 // 1. document ready
+		 $(f1);
+		 
+		 function f1() {
+		 
+			// 1a. set an event like click
+			$("#area").click(function(){
+		 
+			// 2. take text-value from the html document
+			var len = $("#len").val();
+			var bre = $("#bre").val();
+			
+			// 3. make js object
+			var data = {
+				"length": len,
+				"breadth": bre
+			};
+			
+			// alert(JSON.stringify(data));
+			
+			// 4. make ajax object
+			var x = {
+				type: "post",
+				dataType: "json",
+				url: "jquery7as.php",
+				data: {measures:JSON.stringify(data)},
+				// 11. recieve it in ajax object (succes:function(here))
+				success: function(fromServer){
+				// 12. show it on html document
+					$("#result").html(fromServer.area);
+				},
+				error: function(e){alert("Trouble Maker.")}
+			};
+			
+			// 5. ajax call
+			$.ajax(x);
+			
+			
+			});
+		 
+		 };
+		
+		</script>
+	</head>
+	<body>
+		Rectangle: 
+		<input type="text" id="len" placeholder="Length" />
+		<input type="text" id="bre" placeholder="Breadth" />
+		<input type="button" id="area" value="Area"/>
+		<p id="result" ></p>
+	</body>
+</html>

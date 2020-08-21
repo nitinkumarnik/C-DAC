@@ -1,0 +1,23 @@
+<html >
+<head>
+   <title>ed</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script>
+         $(document).ready(function () {
+            $('#btn1').click(function () {
+               $('input').attr('disabled', 'disabled');
+            });
+            $('#btn2').click(function () {
+               $('input').removeAttr('disabled');
+            });
+         });
+      </script>
+   </head>
+<body>
+<div>
+<input type="text" id="tt1" /><br />
+   <button type="button" id="btn1">Disable</button>
+   <button type="button" id="btn2">Enable</button>
+</div>
+</body>
+</html>

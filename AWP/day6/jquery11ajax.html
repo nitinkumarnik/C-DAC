@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<title>Send data to server and recieve it.</title>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		
+		<script>
+			/*
+			 * 1. html
+			 * 2. document ready
+			 * 3. json str 
+			 * 4. ajax obj
+			 * 5. ajax call
+			 * 6. recieve it in php >> decode
+			 * 7. do login in php >> encode
+			 * 8. return data to client
+			 * 9. alert the recieved data
+			 */
+			 
+			$(f1);
+			 
+			function f1() {
+				$("#btn").click(function() {
+					// alert("yo.!");
+					
+					var jsonstr = '{ "empno": 3, "location":"blr", "deptid":3}';
+					
+					var x = {
+						type: "post",
+						dataType: "json",
+						url: "jquery11.php",
+						data: {thekey:},
+					};
+					
+				});
+			 
+			};
+			 
+		</script>
+	</head>
+	<body>
+		<input type="button" id="btn" value="Caller"/>
+	</body>
+</html>

@@ -1,0 +1,57 @@
+<html>
+	<head>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+	
+	  $(f1);
+	  
+	  function f1() {
+	  
+	  $("#count").click(function() {
+		var str = $("#data").val();
+		// alert(str);
+		var words = str.split(' ');
+		var resstr = "";
+		
+		for (var i=0; i<words.length; i++) {
+		  var vow = 0;
+		  var con = 0;
+		  for (char of words[i]) {
+		    if (char == 'a' || char == 'e' || char == 'i' || char == 'o' || char == 'u'){
+			  vow = vow + 1;
+		    } 
+		  }
+		  resstr = resstr + `${words[i]} contains ${vow} vowels and ${words[i].length - vow} consonants <br>`;
+		}
+		$("#result").html(resstr);
+	  });
+
+
+	  $("#sort").click(function(){
+		var str = $("#data").val();
+		var words = str.split(' ');
+		words.sort(function(a, b) {return a.length - b.length});
+		$("#sorting").html(words.join(' '));
+	  
+	  });
+	  
+	  };
+
+	</script>
+
+	</head>
+
+	<body>
+	
+	  <input type="text" id="data" placeholder="Enter a string"/>
+	  <input type="button" id="count" value="Count"/>
+	  <input type="button" id="sort" value="Sort"/>
+	  <br><br>
+	  <h2>Count</h2>
+	  <span id="result">No of counts shown here.</span>
+	  <h2>Sort</h2>
+	  <p id="sorting"></p>
+
+	</body>
+</html>

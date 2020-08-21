@@ -12,7 +12,7 @@
 			
 				$("#btn").click(function (){
 					// alert("c");
-					
+					// alert("Lagta hai chal rha h...1");
 					// data from the textbox
 					var num = $("#txt").val();
 					
@@ -25,19 +25,29 @@
 					var x = {
 						type: "post",
 						dataType: "json",
+						url: "jquery4.php",
+						data: {number:JSON.stringify(dataToServer)},
+						success: function(fromServer) {
+							// alert(fromServer.tenth);
+							$("#here").html(fromServer.tenth);
+						},
+						error: function(e) {
+							alert("Trouble Maker.");
+						}
 					};
 					
+					// ajax call.
+					$.ajax(x);
 					
-					
-					
-					
+					// ("Lagta hai chal rha h...");
+				
 				});
 				
 			};
 		</script>
 	</head>
 	<body>
-		<input type="text" id="txt" />
+		<input type="text" id="txt" placeholder="Number only."/>
 		<input type="button" id="btn" value="Click"/>
 		<p id="here" ></p>
 	</body>
