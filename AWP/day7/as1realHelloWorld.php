@@ -1,7 +1,7 @@
 <?php
 
 	$rcvd = $_POST['nkey'];
-	// $rcvd = '{"num": 3, "fn": "edlogic"}';
+	//$rcvd = '{"num": 3, "newnum": 80, "fn": "modify"}';
 	$pobj = json_decode($rcvd);
 	// echo $pobj;
 	$store = array(1, 2, 3, 4, 5,);
@@ -25,13 +25,28 @@
 	}
 	
 	if ($fn == "remove") {
-		unset($store[array_search('strawberry',$store)]);
+		$count  = 0;
+		foreach ($store as $ele) {	
+			if($num == $ele)
+				break;
+			$count++;
+		}
+		array_splice($store, $count, 1);
+		//unset($store[array_search($num,$store)]);
 		$result['status'] = 1;
 	}
 	
 	if ($fn == "modify") {
 		if (!in_array($nnum, $store)) {
-			array_push($store, $nnum);
+			
+			for($i = 0; $i < count($store);$i++){	
+				if($store[$i] == $num) {
+					$store[$i] = $nnum;
+					break;
+				}
+		}
+		//array_splice($store, $count, 1);
+			//array_push($store, $nnum);
 			$result['status'] = 1;
 		}
 	}
