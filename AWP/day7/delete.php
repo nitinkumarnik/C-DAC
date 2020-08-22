@@ -23,9 +23,7 @@
 		
 		
 		$stmt = $conn->prepare('DELETE FROM products WHERE id = ?');
-		
 		$stmt->bind_param('i', $id);
-		
 		$stmt->execute();
 		//echo $conn->affected_rows;
 		if($conn->affected_rows > 0) {

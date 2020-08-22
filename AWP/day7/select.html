@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<!--
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		-->
+		<script src="jquery.js"></script>
+		<script>
+				
+		$(f1);
+		
+		function f1(){
+		
+			$("#show").click(function () {
+				var sid = $("#sid").val();
+				// alert(JSON.stringify(sid));
+				// alert(11);
+				var x = {
+					type: "post",
+					dataType: "json",
+					data: {key:JSON.stringify(sid)},
+					url: "select.php",
+					success: function(fromServer) {
+						// alert(fromServer);
+						console.log(fromServer.arr);
+						var result = "";
+						var arr = fromServer.arr;
+						for (var i=0; i<arr.length; ++i){
+						result += `${arr[i].id} | ${arr[i].name} | ${arr[i].price} | ${arr[i].brand} <hr>`;
+
+						}
+						$("#msg").html(result);
+					},
+					error: function(e) {
+						alert("Trouble.");
+					},
+				};
+				$.ajax(x);
+			});
+		
+		};
+		
+		</script>
+	</head>
+	<body>
+	
+	
+	
+	Show Data ( &gt; id ): <input type="text" id="sid" />
+	<input type="button" value="Show" id="show" />
+	<br><br>
+	<span id="msg"></span>
+	</body>
+</html>
