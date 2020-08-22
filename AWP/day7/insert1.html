@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script>
+		
+		$(f1);
+		
+		function f1() {
+		
+			$("#insert").click(function() {
+				var pid = $("#pid").val();
+				var pname = $("#pname").val();
+				var pprice = $("#pprice").val();
+				var pbrand = $("#pbrand").val();
+			
+				var jsobj = {
+					id: pid,
+					name: pname,
+					price: pprice,
+					brand: pbrand
+				};
+			
+				//alert(JSON.stringify(jsobj));
+				
+				var x = {
+					type: "post",
+					dataType: "json",
+					data: {nkey:JSON.stringify(jsobj)},
+					url: "insert1.php",
+					success: function(fromServer) {
+						// alert(fromServer);
+						$("#msg").html(fromServer.status);
+					},
+					error: function(e) {
+						alert("Trouble.");
+					},
+				};
+				
+				$.ajax(x);
+			
+			
+			
+			});
+		};
+		
+		
+		</script>
+	</head>
+	<body>
+	<h2>Insert to Db.</h2>
+	Id : <input type="txt" id="pid" />
+	<br><br>
+	Product name : <input type="txt" id="pname" />
+	<br><br>
+	Price: <input type="txt" id="pprice" />
+	<br><br>
+	Brand: <input type="txt" id="pbrand" />
+	<br><br>
+	<input type="button" id="insert" value="Insert" />
+	<span id="msg"></span>
+	
+	
+	</body>
+</html>
+	
