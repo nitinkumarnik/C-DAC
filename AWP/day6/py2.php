@@ -1,7 +1,7 @@
 <?php
-//$a=$_POST["xyz"];
-$c='{"num":3}';
-$b=json_decode($c);
+$a=$_POST["xyz"];
+// $c='{"num":3}';
+$b=json_decode($a);
 $toclient["status"]=0;
 $arr= array("1","2","3","4");
 $arrlength = count($arr);
@@ -9,7 +9,7 @@ $arrlength = count($arr);
 for($i=0;$i<$arrlength;$i++){
 	// echo $arr[$i];
 	if($arr[$i]==$b->num){
-		echo $arr[$i];
+		//echo $arr[$i];
 		$toclient["status"]=1;
 		break;
 	}
