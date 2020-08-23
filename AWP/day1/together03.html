@@ -1,0 +1,116 @@
+<html>
+<head>
+
+<script>
+
+
+function checkIfAnyNumisZero(fn,sn)
+{
+if( fn > 0 && sn > 0)
+	return true;
+else
+	return false;
+
+}
+
+function mulNum()
+{
+
+var t1obj = document.getElementById("t1");
+var t2obj = document.getElementById("t2");
+var x = checkIfAnyNumisZero(t1obj.value,t2obj.value); 
+var spanmsg = document.getElementById("abc123");
+if(x)
+{
+var result = t1obj.value * t2obj.value;
+spanmsg.innerHTML="product is" + result;
+abc123.classList.remove("rc");
+abc123.classList.add("bc");
+
+}
+else
+{
+spanmsg.innerHTML="what are you asking...?";
+abc123.classList.remove("bc");
+abc123.classList.add("rc"); //one line also will work
+//but we will see effect in afternnoon
+
+
+
+
+
+}
+
+//return type as true or false.
+
+
+
+}
+function addNum()//function is getting called by
+//the system when the event occurs.
+{
+
+var t1obj = document.getElementById("t1");
+//dont getinto logical errors by typing
+//the wrong id.
+var t2obj = document.getElementById("t2");
+
+var x = checkIfAnyNumisZero(t1obj.value,t2obj.value); 
+
+//it is understood, this is function calling
+//is it ready made function  -- documentation
+//is it a user defined function -- our fate
+//is to understand it.
+
+
+var spanmsg = document.getElementById("abc123");
+if(x)
+{
+//hey treat this string as numbert only not lie string
+var result = parseInt(t1obj.value) + parseInt(t2obj.value);
+spanmsg.innerHTML="sum is" + result;
+
+//we are adding css classses and removing css classes
+abc123.classList.remove("rc");
+abc123.classList.add("bc");
+
+}
+else
+{
+spanmsg.innerHTML="what are you asking...?";
+abc123.classList.remove("bc");
+abc123.classList.add("rc"); //one line also will work
+//but we will see effect in afternnoon
+
+
+
+
+
+}
+
+
+	
+	
+}
+
+</script>
+<style>
+
+.rc { color:red }
+.bc  { color:blue }
+
+
+</style>
+</head>
+
+<br/> number 1<input type="text" id="t1">
+<span id="abc123" >change this message accoring to logic </span>
+<br/> number 2 <input type="text" id="t2">
+<br/> <input type="button" value="add"
+onClick="addNum()"/><!-- this is place where adventures-->
+<input type="button" value="multiply"
+onClick="mulNum()"/>
+
+
+
+</html>

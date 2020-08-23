@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        window.onload = function() {
+            var num1 = document.getElementById("num1");
+            var num2 = document.getElementById("num2");
+            var result = document.getElementById("result");
+
+            num1.addEventListener("blur", blr);
+            num2.addEventListener("blur", blr);
+
+            document.getElementById("add").addEventListener("click", add);
+            document.getElementById("mul").addEventListener("click", mul);
+
+            function blr() {   
+                if (num1.value == 0 || num2.value == 0) {
+                    document.getElementById("mul").disabled = true;
+                } else {
+                    document.getElementById("mul").disabled = false;
+                }
+            };
+
+
+            function add() {
+                result.innerHTML = parseInt(num1.value) + parseInt(num2.value);
+            };
+
+            function mul() {
+                result.innerHTML = num1.value * num2.value;
+            };
+
+
+        };
+
+
+        
+        // window.onload = function() {
+            
+        // document.onload = function() {
+            
+            
+
+            // function add() {
+            //     var num1 = document.getElementById("num1").value;
+            //     var num2 = document.getElementById("num2").value;
+
+            //     console.log(parseInt(num1) + parseInt(num2));
+            // }
+
+            // function mul() {
+            //     var num1 = document.getElementById("num1").value;
+            //     var num2 = document.getElementById("num2").value;
+
+            //     console.log(num1*num2);
+            // }
+            // num1.addEventListener("onblur", blr);
+            // add.addEventListener("onclick", add);
+        // }
+        // };
+
+        // window.addEventListener('load', function() {
+        //     var num1 = document.getElementById("num1").value;
+        //     var num2 = document.getElementById("num2").value;
+            
+        //     function blr() {
+        //         if (num1 == 0 || num2 == 0) {
+        //             document.getElementById("add").dissabled = true;
+        //         }
+        //     }
+
+        //     function add() {
+        //         alert(num1);
+        //     }
+        // });
+
+    </script>
+
+
+</head>
+<body>
+    
+    Num 1 <input type="text" id="num1"/><br>
+    Num 2 <input type="text" id="num2"/><br>
+    <input type="button" id="add" value="Add"/>
+    <input type="button" id="mul" value="Multiply"/>
+    <br><br>
+    <h2 id="result"></h2>
+
+</body>
+</html>

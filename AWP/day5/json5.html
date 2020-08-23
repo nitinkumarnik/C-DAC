@@ -1,0 +1,18 @@
+<script>
+
+// parsing json string with function
+
+
+var jsonstrwithfn = '{ "name":"John", "age":"function () {return 30;}", "city":"New York"}';
+
+
+var parsed = JSON.parse(jsonstrwithfn);
+
+
+// do not use eval function. security risk.
+parsed.age = eval("(" + parsed.age + ")");
+
+alert(parsed.age());
+
+
+</script>

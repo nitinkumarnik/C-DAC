@@ -1,0 +1,39 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+</script>
+<script>
+$(f1);
+
+function f1(){
+	$("#b1").click(function(){
+		var a = {n1:8,n2:2,oper:"*"};
+		
+		// var jstr = '{"result":10}';
+		// alert(JSON.parse(jstr).result);
+		
+		var x =
+		{
+			type:"POST",
+			dataType:"JSON",
+			//url:"Program2_Ajax.php",
+			url:"py1.php",
+			data:{xyz:JSON.stringify(a)},
+			success: function(gvs){		
+				alert(gvs.result);
+			},
+			error: function(e){
+				alert('we have trouble');
+			}
+		}
+		$.ajax(x);
+	
+	});
+
+}
+</script>
+</head>
+<body>
+<br/><input type ="button" value="click" id="b1"/>
+</body>
+</html>

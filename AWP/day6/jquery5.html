@@ -1,0 +1,36 @@
+<html>
+	<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(f1);
+		
+		function f1() {
+			$("p").click(function() {
+				$(this).hide();
+			});
+			
+			$("#box").focus(function() {
+				$(this).css({"background-color": "yellow"});
+			});
+			
+			$("#jid").hover(function() {
+				$(this).css({"color":"red"});
+			});
+			
+			$(".jclass").hover(function() {
+				$(this).css({"background-color": "gray"});
+			});
+		
+		};
+		
+	</script>
+	</head>
+	<body>
+		Box: <input type="text" id="box" />
+		<input type="button" id="btn" value="The Clicker."/><br><br>
+		<h3 id="here">Something here.</h3>
+		<p>This is paragraph tag.</p>
+		<p id="jid">Paragraph tag with id = "jid"</p>
+		<p class="jclass">Paragraph tag with class = "jclass"</p>
+	</body>
+</html>

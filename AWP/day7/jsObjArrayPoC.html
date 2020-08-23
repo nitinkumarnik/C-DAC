@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+
+ 
+
+	$(document).ready(function(){
+
+		$("#x").click(function(){
+  
+  
+		//pick up data from the given output
+		var jso = [{id:1333, name:"x"}, {id:2, name:"y"},{id:43, name:"z"},{id:1, name:"a"}];
+		
+		var jsonstr = JSON.stringify(jso);
+		
+		alert(jsonstr);
+		// '[{"id":1333,"name":"x"},{"id":2,"name":"y"},{"id":43,"name":"z"},{"id":1,"name":"a"}]'
+		
+		alert(jso[0].name);
+		// x
+		
+		
+		});
+  
+	});
+	</script>
+	</head>
+	<body>
+		<p>[{id:1333, name:"x"}, {id:2, name:"y"},{id:43, name:"z"},{id:1, name:"a"}]</p>
+		<button id ="x">JS Obj Arr</button>
+
+	</body>
+</html>

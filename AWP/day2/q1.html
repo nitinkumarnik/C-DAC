@@ -1,0 +1,62 @@
+<html>
+<head>
+<style>
+
+</style>
+
+<script>
+
+  
+
+  function changeColor() {
+    var col = document.getElementById("txt");
+    var btext = document.getElementById("cbutton");
+	if (btext.textContent == "red") {
+		btext.textContent = "blue";
+		col.style.color = "red";
+	} else {
+		btext.textContent = "red";
+		col.style.color = "blue";
+	}
+  }
+
+
+  function hideShow() {
+	var col = document.getElementById("txt");
+	var hsbtn = document.getElementById("hsbutton");
+	var cbtn = document.getElementById("cbutton");
+	
+	if (hsbtn.textContent == "hide") {
+	  hsbtn.textContent = "show";
+	  col.style.visibility = "hidden";
+	  cbtn.disabled = true;
+	} else {
+	  hsbtn.textContent = "hide";
+	  col.style.visibility = "visible";
+	  cbtn.disabled = false;
+	}
+	
+  }
+  
+  function reset() {
+    document.getElementById("txt").style.color = "black";
+	document.getElementById("txt").style.visibility = "visible";
+	document.getElementById("cbutton").textContent = "red";
+	document.getElementById("hsbutton").textContent = "hide";
+	document.getElementById("cbutton").disabled = false;
+  }
+
+</script>
+
+</head>
+
+<body>
+
+  <h1 id="txt">Never kill John Wick's dog.</h1>
+
+  <button id="cbutton" onclick="changeColor()">red</button>
+  <button id="hsbutton" onclick="hideShow()">hide</button>
+  <input type="button" onclick="reset()" value="reset"/>
+
+</body>
+</html>

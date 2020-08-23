@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <script>
+            function fifthMultiple() {
+                
+                var xhtp = new XMLHttpRequest();
+
+                var num = document.getElementById("num");
+
+                // http://localhost/day3/as1.php?num=3
+                var url = "http://localhost/awp/day3/as1.php";
+                var param = "?num=" + num.value;
+                url = url + param;
+                xhtp.onreadystatechange = function() {
+                    
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("showHere").innerHTML = this.responseText;
+                    }
+                };
+                
+                xhtp.open("GET", url, true);
+                xhtp.send();
+                
+
+            }
+        </script>
+    </head>
+    <body>
+
+        Number <input type="text" id="num"/>
+        <input type="button" onclick="fifthMultiple()" value="Multiply it by 5" />
+        <p id="showHere"></p>
+
+    </body>
+</html>

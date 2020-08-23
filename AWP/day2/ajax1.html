@@ -1,0 +1,51 @@
+<html>
+
+<head>
+<script>
+
+function doubleIt()
+{
+var t1 = document.getElementById("t1");
+t1.value = t1.value * 2; // logic has to be done by php and php has to give you
+//data.
+
+var mess = document.getElementById("mess");
+mess.innerHTML= t1.value;
+
+
+}
+
+function tripleIt()
+{
+var t1 = document.getElementById("t1");
+// logic has to be done by php and php has to give you the data.
+t1.value = t1.value * 3;
+
+var mess = document.getElementById("mess");//mess id is not a textbox
+//it is an id of span or some non textbox component
+mess.innerHTML= t1.value;  //to assign some value into the mess area
+
+// we have this property called innerHTML
+
+//t1.value will get updated in the part of the html page where id is mess.
+
+
+
+}
+
+
+</script>
+
+</head>
+
+<body>
+<Br/> when we get struck program we do to know concept should be small
+<Br/>
+number <input type="text" id="t1"/>
+<span id="mess"> one day we will show message</span>
+<Br/><input type="button" value="Double It" onClick="doubleIt()"/>
+<input type="button" value="Triple It" onClick="tripleIt()"/>
+
+
+</body>
+</html>

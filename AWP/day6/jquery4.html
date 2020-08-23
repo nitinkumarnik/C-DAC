@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+		<script>
+		
+		
+		
+		
+			$(f1);
+			
+			function f1() {
+			
+				$("#btn").click(function (){
+					// alert("c");
+					// alert("Lagta hai chal rha h...1");
+					// data from the textbox
+					var num = $("#txt").val();
+					
+					// creating the js object
+					var dataToServer = {"num":num};
+					
+					// alert(JSON.stringify(dataToServer));
+					
+					// creating ajax...to do a server call with data
+					var x = {
+						type: "post",
+						dataType: "json",
+						url: "jquery4.php",
+						data: {number:JSON.stringify(dataToServer)},
+						success: function(fromServer) {
+							// alert(fromServer.tenth);
+							$("#here").html(fromServer.tenth);
+						},
+						error: function(e) {
+							alert("Trouble Maker.");
+						}
+					};
+					
+					// ajax call.
+					$.ajax(x);
+					
+					// ("Lagta hai chal rha h...");
+				
+				});
+				
+			};
+		</script>
+	</head>
+	<body>
+		<input type="text" id="txt" placeholder="Number only."/>
+		<input type="button" id="btn" value="Click"/>
+		<p id="here" ></p>
+	</body>
+</html>

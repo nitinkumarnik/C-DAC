@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script>
+		
+		$(f1);
+		
+		function f1(){
+		
+			$("#del").click(function () {
+				var did = $("#did").val();
+				// alert(JSON.stringify(did));
+				// alert(11);
+				var x = {
+					type: "post",
+					dataType: "json",
+					data: {key:JSON.stringify(did)},
+					url: "delete.php",
+					success: function(fromServer) {
+						// alert(fromServer);
+						$("#msg").html(fromServer.status);
+					},
+					error: function(e) {
+						alert("Trouble.");
+					},
+				};
+				$.ajax(x);
+			});
+		
+		};
+		
+		</script>
+	</head>
+	<body>
+	
+	id to delete row: <input type="text" id="did" />
+	<input type="button" value="Delete" id="del" />
+	<br><br>
+	<span id="msg"></span>
+	</body>
+</html>

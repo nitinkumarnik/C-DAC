@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <script>
+	  function calc() {
+		// alert("Calculating...");
+		
+		var len = document.getElementById("len");
+		var bre = document.getElementById("bre");
+		
+		var datatoserver = {"len":len.value, "bre":bre.value};
+		
+		jsondatatoserver = JSON.stringify(datatoserver);
+		
+		// alert(jsondatatoserver);
+		
+		var url = "http://localhost/day5/areaperi.php";
+		var param = "?jsonstr=" + jsondatatoserver;
+		
+		url = url + param;
+		
+		// alert(url);
+		
+		xhtp = new XMLHttpRequest();
+		
+		xhtp.onreadystatechange = function () {
+		  if (this.readyState == 4 && this.status == 200) {
+			// alert(this.responseText);
+			var rect = JSON.parse(this.responseText);
+			document.getElementById("area").innerHTML = rect.area;
+			document.getElementById("peri").innerHTML = rect.peri;
+		  }
+		};
+		
+		xhtp.open("get", url, true);
+		xhtp.send();
+		
+	  }
+	</script>
+  </head>
+  <body>
+    <h1>Rectangle</h1>
+    Length <input type="text" id="len"/><br>
+	Breadth <input type="text" id="bre"/><br>
+	<input type="button" onClick="calc()" value="Calculate"><br>
+	<h2>Area = <span id="area">?</span> sq units</h2>
+	<h2>Perimeter = <span id="peri">?</span> units</h2>
+  </body>
+</html>

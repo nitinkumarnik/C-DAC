@@ -1,0 +1,65 @@
+<html>
+	<head>
+	<style>
+		.blue {color: blue;}
+		.red {color: red;}
+		.black {color: black;}
+		.hideshow {visibility: hidden;}
+		
+		
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+	
+	  $(f1);
+	  
+	  function f1() {
+	    var clk = 1;
+		$("#cbutton").click(function(){
+			// alert(clk);
+			if (clk == 1) {
+				$("#txt").removeClass("black");
+				$("#txt").addClass("red");
+				clk = 2;
+
+			} else {
+				$("#txt").removeClass("red");
+				$("#txt").addClass("blue");
+				clk = 1;
+			}
+		  
+		});
+		
+		var at = 1;
+		$("#hsbutton").click(function() {
+			$("#txt").toggleClass("hideshow");
+			if (at == 1) {
+				$("#cbutton").attr('disabled', 'disabled');
+				at = 2;
+			} else {
+				$("#cbutton").removeAttr('disabled');
+				at = 1;
+			}
+		});
+		
+		$("#reset").click(function(){
+			$("#txt").addClass("black");
+			$("#txt").removeClass("hideshow");
+			$("#cbutton").removeAttr('disabled');
+		});
+	  
+	  };
+
+	</script>
+
+	</head>
+
+	<body>
+
+	  <h1 id="txt">Never kill John Wick's dog.</h1>
+	  <input type="button" id="cbutton" value="red/blue"/>
+	  <input type="button" id="hsbutton" value="hide/show"/>
+	  <input type="button" id="reset" value="reset"/>
+
+	</body>
+</html>

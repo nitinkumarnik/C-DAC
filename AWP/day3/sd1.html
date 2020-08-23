@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>assignment 14august</title>
+        <script>
+            function multiplication(){
+            var xhr=new XMLHttpRequest();
+            var t1=document.getElementById("t1");
+            var url="http://localhost/awp/day3/sd1.php";
+           
+            var pm="?t1="+t1.value;
+
+            url=url+pm;
+                alert("check 1");
+            xhr.onreadystatechange=function()
+            {
+                alert("check 4");
+                if(this.readyState==4 && this.status==200)
+                {
+                    alert("check 5");
+                    alert(this.responseText);
+                    //var datafromserver=this.responseText;
+                    //var sp=document.getElementById("sp");
+                   // sp.innerHTML=datafromserver;
+                    document.getElementById("sp").innerHTML=this.responseText;
+                }
+            };
+            alert("check 2");
+            xhr.open("GET",url,true);
+            alert("check 3");
+            xhr.send();
+            }   
+        </script>
+    </head>
+    <body>
+        INPUT: <input type="text" id="t1" />
+        
+        </br>
+        <input type="button" value="click me" onclick="multiplication()"/>
+        <p id="sp"></p>
+
+    
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    var arr = [3, 45, 2, 4, 56, 50];
+    var sum = 0;
+    function sumMultipleFive(arr) {
+        
+        for (var i=0; i<arr.length; i++) {
+            if (arr[i] % 5 == 0) {
+                sum = sum + arr[i];
+            }
+        }
+        return sum;
+    };
+
+    sumMultipleFive(arr);
+
+    alert(sum);
+
+
+</script>
+
+
+</html>

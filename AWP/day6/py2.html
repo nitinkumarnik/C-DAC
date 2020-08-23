@@ -1,0 +1,47 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+</script>
+<script>
+$(f1);
+
+function f1(){
+
+	
+	$("#t1").blur(function(){
+	// alert("Deadpool");
+	var a =$("#t1").val(); // changed here
+	// alert(a);
+	var nu ={num:a};
+	
+	var x =
+	{	
+		type:"POST",
+		dataType:"JSON",
+		url:"py2.php",
+		data:{xyz:JSON.stringify(nu)},
+		success: function(gvs){
+		// alert("Gabbar");
+			alert(gvs.status);
+		},
+		error: function(e){
+			alert('we have trouble');
+		}
+	}
+	
+	$.ajax(x) // call krna bhi magta h
+	
+	});
+}
+</script>
+</head>
+<body>
+<br/>number1<input type ="text" id ="t1"/><span id ="msg">msg</span>
+<br/>
+<br/>number2<input type ="text" id ="t2" disabled/>
+<br/><br/><input type ="button" id ="b1" value="add" disabled/>
+<input type ="button" id ="b2" value="remove" disabled/>
+<input type ="button" id ="b3" value="modify" disabled/>
+</body>
+</head>
+</html>

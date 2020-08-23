@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <script>
+
+            window.addEventListener('load', 
+            function() {
+                var arr = [];
+                for (var i=0; i<20; i++) {
+                    arr.push(Math.floor(Math.random()*99));
+                }
+                
+                var fv = [];
+                var svn = [];
+
+                for (var i=0; i<20; i++) {
+                    if (arr[i]%5 == 0) { fv.push(arr[i]) };
+                    if (arr[i]%7 == 0) { svn.push(arr[i]) };
+                }
+
+
+                document.getElementById("randNum").innerHTML = arr.join(", ");
+                
+                document.getElementById("fiveMultiple").addEventListener("change", function() { 
+                    if (this.checked) {
+                        document.getElementById("fivesHere").innerHTML = fv.join(", ");
+                    } else {
+                        document.getElementById("fivesHere").innerHTML = "";
+                    }
+                });
+
+                document.getElementById("sevenMultiple").addEventListener("change", function() {
+                    if (this.checked)
+                        document.getElementById("sevensHere").innerHTML = svn.join(", ");
+                    else
+                        document.getElementById("sevensHere").innerHTML = "";
+                });
+
+            });
+
+
+            
+        </script>
+    </head>
+    <body>
+        <h1>20 Random Numbers.</h1>
+        <span id="randNum"></span>
+        <br><br>
+        <input type="checkbox" id="fiveMultiple" value="five"/> Multiples of 5<br>
+        <span id="fivesHere"></span>
+        <br>
+        <input type="checkbox" id="sevenMultiple" value="seven"/> Multiples of 7<br>
+        <span id="sevensHere"></span>
+
+    </body>
+</html>

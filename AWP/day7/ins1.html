@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script>
+
+			 /*
+			var JSONString = '[{"name":"Jonathan Suh","gender":"male"},{"name":"William Philbin","gender":"male"},{"name":"Allison McKinnery","gender":"female"}]';
+
+			  var JSONObject = JSON.parse(JSONString);
+			  alert(JSONObject);      // Dump all data of the Object in the console
+			  alert(JSONObject[1]["name"]); // Access Object data
+			*/
+
+			$(document).ready(function(){
+			  $("#x").click(function(){ 
+			  //pick up data from the given output
+			   var data1 = {
+								"id":$("#id").val(),
+								"name":$("#name").val(),
+								"price":$("#price").val(),
+								"brand":$("#brand").val(),
+								
+							};
+				var data1json = JSON.stringify(data1);
+				alert(data1json);
+							//check whether your data comes correctly
+							//alert(data1.k1);
+							//datatype what you expect from server
+							//contentType what you send to the server.
+						//dataType: "json",	
+						// contentType: //'application/x-www-form-urlencoded; //charset=UTF-8'
+						
+				
+				//"application/json; charset=utf-8",
+				
+				//data i am sending all parameters individually
+				//not as a json string, you send it as a json
+				//string think how to pass it.. one line code..
+				 var x =
+				 {
+						type: "post",
+						dataType:"text",
+						url: "ins1.php",
+						data: {mekey:data1json},
+						success: function(gvs){
+							alert(gvs);
+						},
+						error: function(e){
+							alert('we have trouble'+ e.msg);
+						}
+				};
+				 
+				 $.ajax(x);
+			  }); 
+			});
+</script>
+</head>
+<body>
+
+<h2>This is a heading</h2>
+<Br/>itemno <input type="text" id="id"/>
+<Br/>name <input type="text" id="name"/>
+<Br/>price <input type="text" id="price"/>
+<Br/>companyname <input type="text" id="brand"/>
+
+
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+
+<button id ="x">make ajax call</button>
+
+</body>
+</html>
