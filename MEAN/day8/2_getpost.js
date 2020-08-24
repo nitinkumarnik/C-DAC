@@ -23,7 +23,7 @@ app.get("/one", function(req, res) {
  * post comes with html body
  */
 
- // register event... post http request
+ // register event... post http request.
 app.post("/", function(req, res) {
     res.send("http post method: here");
     console.log("http post req");

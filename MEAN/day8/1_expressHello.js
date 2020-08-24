@@ -1,6 +1,6 @@
 // include express module
 const express = require('express');
-const app = express(); // create object of express
+const app = express(); // create object of express.
 
 
 // Registering for an event.

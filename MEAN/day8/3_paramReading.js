@@ -1,5 +1,5 @@
 const express = require('express'); // include express module
-const app = express(); // create object of express of module
+const app = express(); // create object of express of module.
 
 
 // this is used for static file

@@ -7,7 +7,7 @@ exports.hey = function() {
 
 
 // module with parameters is defined
-// it takes arguments from user.
+// it takes arguments from user
 exports.addNum = function(x, y) {
     return x+y;
 };

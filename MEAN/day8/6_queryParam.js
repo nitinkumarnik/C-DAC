@@ -8,7 +8,7 @@ app.get("/", (req, res) => {
 });
 
 
-// by request object we can read the param
+// by request object we can read the param.
 // http://localhost/hitman?x=47&y=43
 app.get("/hitman", (req, res) => {
     let codea = req.query.x;

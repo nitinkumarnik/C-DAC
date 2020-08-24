@@ -3,7 +3,7 @@ const mysql = require('mysql'); // include mysql
 
 
 // connection object using mysql.createConnection
-// Create
+// Create.
 const con = mysql.createConnection({
     host: "localhost",
     user: "root",
