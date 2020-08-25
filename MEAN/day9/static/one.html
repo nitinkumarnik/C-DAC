@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get & Post Request.</title>
+</head>
+<body>
+    <h2>One html.</h2>
+    <h3>Get & Post Request, & read json on server.</h3>
+    <p>Creating seperate form for get, post and json.</p>
+    <hr>
+    <!-- To read get data on server... get http req -->
+    <h3>to read get data on server</h3>
+    <form action="gmodreq" method="get">
+        <input type="text" name="gval" />
+        <input type="submit" value="Get, Check" />
+    </form>
+    <hr>
+    <!--  To read post data on server... post http req -->
+    <h3>to read post data on server</h3>
+    <form action="pmodreq" method="post">
+        <input type="text" name="pval" />
+        <input type="submit" value="Post, Check"/>
+    </form>
+    <hr>
+    <!--  To read json str on server -->
+    <h3>to read json str on server</h3>
+    <form action="pmodjson" method="post">
+        <input type="text" name="jsonstr" />
+        <input type="submit" value="Post, Check" />
+    </form>
+    <hr>
+</body>
+</html>
