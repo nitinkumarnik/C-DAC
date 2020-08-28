@@ -1,0 +1,145 @@
+<html>
+	<head>
+	<style>
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+
+	 $(f1);
+	 function f1(){
+		// alert("All set");
+		$("#txt2, #add, #remove, #modify").attr("disabled", true);
+		
+		// enable/disable logic
+		$("#txt1").blur(function() {
+			$("#msg1").html("");
+			var num = $("#txt1").val();
+			var cts = {num: num, newnum: 0, fn: "edlogic"};
+			//alert(num);
+			//alert(JSON.stringify(num));
+			var x = {
+				type: "post",
+				dataType: "json",
+				data: {nkey:JSON.stringify(cts)},
+				url: "/winteriscoming",
+				success: function(fromServer){
+					// alert(fromServer.status);
+					if (fromServer.status == 0) {
+						$("#txt1").attr("disabled", true);
+						$("#add").attr("disabled", false);
+					} else if (fromServer.status == 1) {
+						$("#txt1").attr("disabled", true);
+						$("#txt2, #modify, #remove").attr("disabled", false);
+					}
+					$("#nums").html(fromServer.arr.join(", "));
+					//alert(fromServer.arr);
+				},
+				error: function(e) {
+					alert("Got some trouble");
+				}
+			};
+			$.ajax(x);
+			
+		});
+		
+		// add
+		$("#add").click(function(){
+			var num = $("#txt1").val();
+			var cts = {num: num, newnum: 0, fn: "add"};
+			var x = {
+				type: "post",
+				dataType: "json",
+				data: {nkey:JSON.stringify(cts)},
+				url: "/winteriscoming",
+				success: function(fromServer){
+					// alert(fromServer.status);
+					if (fromServer.status == 1) {
+						$("#msg1").html("Added.");
+						$("#add").attr("disabled", true);
+						$("#txt1").attr("disabled", false);
+						$("#txt1").val("");
+						$("#nums").html(fromServer.arr.join(", "));
+					}
+				},
+				error: function(e) {
+					alert("Some kind of trouble.");
+				}
+			};
+			$.ajax(x);
+		
+		});
+		
+		
+		// modify
+		$("#modify").click(function() {
+			var num = $("#txt1").val();
+			var newnum = $("#txt2").val();
+			var cts = {num: num, newnum: newnum, fn: "modify"};
+			var x = {
+				type: "post",
+				dataType: "json",
+				data: {nkey:JSON.stringify(cts)},
+				url: "/winteriscoming",
+				success: function(fromServer){
+					// alert(fromServer.status);
+					if (fromServer.status == 1) {
+						$("#msg1").html("Updated.");
+						$("#add, #remove, #modify, #txt2").attr("disabled", true);
+						$("#txt1").attr("disabled", false);
+						$("#txt1, #txt2").val("");
+						$("#nums").html(fromServer.arr.join(", "));
+					} else if (fromServer.status == 0) {
+						$("#msg1").html("Enter unique number.");
+					}
+				},
+				error: function(e) {
+					alert("Some kind of trouble.");
+				}
+			};
+			$.ajax(x);
+		});
+		
+		
+		
+		//remove
+		$("#remove").click(function() {
+			var num = $("#txt1").val();
+			var cts = {num: num, newnum: 0, fn: "remove"};
+			var x = {
+				type: "post",
+				dataType: "json",
+				data: {nkey:JSON.stringify(cts)},
+				url: "/winteriscoming",
+				success: function(fromServer){
+					// alert(fromServer.status);
+					if (fromServer.status == 1) {
+						$("#msg1").html("Deleted.");
+						$("#add, #remove, #modify, #txt2").attr("disabled", true);
+						$("#txt1").attr("disabled", false);
+						$("#txt1").val("");
+						$("#nums").html(fromServer.arr.join(", "));
+					}
+				},
+				error: function(e) {
+					alert("Some kind of trouble.");
+				}
+			};
+			$.ajax(x);
+		
+		});
+	 
+	 };
+	</script>
+	</head>
+	<body>
+	Number: <input type="text" id="txt1"/>
+	<span id="msg1"></span>
+	<br><br>
+	Update : <input type="text" id="txt2"/>
+	<br><br>
+	<input type="button" id="add" value="Add"/>
+	<input type="button" id="remove" value="Remove"/>
+	<input type="button" id="modify" value="Modify"/>
+	<h2 id="nums"></h2>
+	</body>
+</html>

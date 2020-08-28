@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        
+window.onload = function(e){ 
+
+    alert(1)
+
+        function a() {
+            let y = {
+                jsob : function() {
+                  let jsob = {"key": "val"}; 
+                  return jsob 
+                }
+            };
+            return y.jsob();
+        };
+
+        alert(2)
+
+        function b() {
+            let x = a();
+            alert(x.key);
+        }
+
+        b();
+
+        alert(3)
+    } 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
