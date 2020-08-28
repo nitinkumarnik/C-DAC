@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee.</title>
+    <style>
+        td, th {
+            border: 1px solid #999;
+            padding: 0.5rem;
+            }
+        .hide {
+            visibility: hidden;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(f1);
+
+        function f1() {
+
+            
+
+            $("#btn").click(function() {
+                let empno = { "empid": $("#empno").val()};
+
+                let dataToServer = {
+                    type: "post",
+                    dataType: "json",
+                    data: {keyid: JSON.stringify(empno)},
+                    url: "/dbprocess",
+                    success: function(fromServer) {
+                        // alert(fromServer.res1.empname);
+                        if (fromServer.status == 1) {
+                            $("#tab").removeClass('hide');
+                            $("#msg").addClass('hide');
+                            $("#empid").html(fromServer.res1.empid);
+                            $("#empname").html(fromServer.res1.empname);
+                            $("#mobileno").html(fromServer.res1.mobileno);
+                            $("#location").html(fromServer.res1.location);
+                        }
+                        else if (fromServer.status == 0) {
+                            $("#tab").addClass('hide');
+                            $("#msg").removeClass('hide')
+                            $("#msg").html("Not in Db.");
+                        }
+                        
+                    },
+                    error: function (e) {
+                        alert("Error");
+                    }
+                }
+
+                $.ajax(dataToServer);
+
+            });
+
+
+
+        };
+    </script>
+</head>
+<body>
+    <h1>Employee.</h1>
+    Emp No: <input type="text" id="empno" /><span id="msg"></span><br><br>
+    <input type="button" value="Get Details" id="btn" />
+    <br>
+
+    <table class="hide" id="tab">
+        <thead>
+            <tr>
+                <th>EmpID</th>
+                <th>Name</th>
+                <th>Mobile</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="empid"></td>
+                <td id="empname"></td>
+                <td id="mobileno"></td>
+                <td id="location"></td>
+            </tr>
+        </tbody>
+    </table>
+   
+</body>
+</html>
