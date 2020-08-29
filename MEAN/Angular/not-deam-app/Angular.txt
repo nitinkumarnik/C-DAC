@@ -1,0 +1,35 @@
+Concept
+	- Angular is a presentation technology.
+	- While building the code it need a nodejs runtime.
+	- It has an architecutre
+		- Module
+		   - Component
+		   - Model
+		   - Service
+
+Client part					|	    Server part	
+						|
+(angular code(angular runtime(nodejs runtime)))	|  (nodejs code(nodejs runtime))
+						|
+
+
+
+
+
+  			Module
+-----------------------------------------------------------------								
+|	 _______________________________________________	|
+|	| Component <---|  Model	|--->   Service	|	|
+|	|---------------|---------------|---------------|	|
+|	|  html		| class 	| place where   |	|
+|	|  css		| which group   | ajax calls etc|	|
+|	| file js code  | information   | 		|	|
+|	| file testing  | input data    | business logic|	|
+|	|	code    |		|		|	|
+|	|_______________|_______________|_______________|	|
+|								|
+----------------------------------------------------------------
+
+
+Have empno textbox, empname, deptid,
+Create a model (class, empclass) of this.
