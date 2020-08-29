@@ -1,0 +1,24 @@
+- Objects in JS are quite like objects in real life.
+- They have properties and things they can do (methods).
+- Classes in JS are like blueprints.
+-- User Class
+     email
+     name
+     status
+     login()
+     logout()
+
+----	userOne
+	  joker@darkknight.com
+	  joker
+	  true
+
+----	userTwo
+	  mario@game.com
+	  mario
+	  false
+
+-- the 'new' keyword
+---- creates a new empty object {}
+---- sets the value of 'this' to be the new empty object
+---- calls the constructor method
