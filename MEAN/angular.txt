@@ -1,0 +1,53 @@
+Angular
+
+1. Module
+2. Component
+	A place which groups html, css, client side javascript, event handling, all this logic come
+	int component only.
+
+3. Model
+	We variable/parameters between service and components. Instead of passing them individually
+	to function, we pass them as object to function. If we want to create an object we need 
+	class. In angular we say these classes as Model.
+	>> ng generate class someclassname
+
+4. Service
+	Business logic, like add of two numbers, multiplication etc. are written in service.
+	Ajax calls done here.
+
+	>> ng generate service somename
+	>> -- two files created somename.service.ts and another for testing
+	>> write business logic and return it
+	>> in component.ts file import it
+	>> import { classname } from './somename'; here somename is file name
+	>> write it in constructore argument
+	>> write in the event handling function
+
+5. Directives and pipes
+	Directives is term for two binding variable str in component html, like: [(ngModel)]='v2'.
+	Pipes gives style to interpolation in html. {{ var | style }}
+
+
+We pass information between component to service and get back information from service back to component.
+
+
+	
+Client part					|	    Server part	
+						|
+(angular code(angular runtime(nodejs runtime)))	|  (nodejs code(nodejs runtime))
+						|
+
+
+  			Module
+-----------------------------------------------------------------								
+|	 _______________________________________________	|
+|	| Component <---|  Model	|--->   Service	|	|
+|	|---------------|---------------|---------------|	|
+|	|  html		| class 	| place where   |	|
+|	|  css		| which group   | ajax calls etc|	|
+|	| file js code  | information   | 		|	|
+|	| file testing  | input data    | business logic|	|
+|	|	code    |		|		|	|
+|	|_______________|_______________|_______________|	|
+|								|
+----------------------------------------------------------------
