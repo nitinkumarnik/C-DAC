@@ -28,8 +28,12 @@
   <button (click)='poc1()'>PoC</button>
   {{ showherepoc }}
 
-
-
+  <h3>Two numbers!</h3>
+  Num 1: <input [(ngModel)]="num1" /><br><br>
+  Num 2: <input [(ngModel)]="num2" /><br><br>
+  <button (click)='add()'>Add</button>
+  <button (click)='subs()'>Subs</button>
+  <button (click)='multiply()'>Multipy</button> {{ resultshown }}
 </div>
 
 
