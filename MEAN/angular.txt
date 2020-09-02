@@ -51,3 +51,28 @@ Client part					|	    Server part
 |	|_______________|_______________|_______________|	|
 |								|
 ----------------------------------------------------------------
+
+
+Ajax call steps.
+- generate model in which we can create objects to get data in single unit from the form.
+- make form in html
+- in component declare that object.
+- in component > constructor init that object.
+- make form and button
+- generate model for result
+- generate service 
+- in service import the models, observable, httpclient
+- in service > constructor pass argument like private ajx:HttpClient
+- in service make function for ajaxcalltonode like:
+	ajxcl(in:inputarg):Observable<OutModel> {
+		let url = 'someurl';
+		return this.ajx.post<OutModel>(url, in);
+	}
+- in component > constructor pass argument of service like privare sref:serviceName
+- in component create fn to call service like:
+	ajxservcl() {
+		this.sref.ajxcal(this.object).subscribe(
+			(data:OutModel) => {},
+			(error) => {}
+		);	
+	}
