@@ -1,4 +1,4 @@
-Module: AWP
+Module: MEAN Stack
 
 Teacher: Srinivas P (Vasu Sir)
 
