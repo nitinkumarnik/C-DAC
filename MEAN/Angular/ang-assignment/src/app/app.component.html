@@ -1,0 +1,14 @@
+<div style="text-align:center;">
+  <h1>{{title}}</h1>
+  <br>Number: <input (blur)='blur()' [(ngModel)]='val.numval' />
+  <br>
+  <br>Update: <input [(ngModel)]='val.updval' [disabled]='up' />
+  <br><br>
+  <button (click)='add()' [disabled]='a' style="margin-right: 8px;">Add</button>
+  <button (click)='remove()' [disabled]='r' style="margin-right: 8px;">Remove</button>
+  <button (click)='modify()' [disabled]='m' >Modify</button>
+  <br><br>
+  <h2>{{show}}</h2>
+  <hr>
+  <app-employee-db></app-employee-db>
+</div>

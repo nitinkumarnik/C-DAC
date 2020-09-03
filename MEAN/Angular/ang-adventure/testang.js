@@ -22,7 +22,23 @@ app.post('/pocisimportant', (req, res) => {
     res.send(xyz);
 });
 
+app.post('/domaths', (req, res) => {
+    console.log(req.body.v1+ ' '+ req.body.v2+ ' '+ req.body.oper);
+    console.log(req.body);
+    let v1 = req.body.v1;
+    let v2 = req.body.v2;
+    let oper = req.body.oper;
+    let sendit = {"msg": "failure", "value":0};
 
+    if (v1 >= 0 && v2 >= 0) {
+        if (oper == '*')
+            sendit = {"msg": "success", "value": v1*v2};
+        else if (oper == '-')
+            sendit = {"msg": "success", "value": v1-v2};
+    }
+
+    res.send(sendit);
+});
 
 
 

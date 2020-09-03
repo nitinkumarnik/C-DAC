@@ -1,0 +1,44 @@
+
+<div style="text-align:center;">
+    <p>employee-db works!</p>
+    
+    <h1>{{title}}</h1>
+    <br>Emp Id: <input (blur)='blur()' [(ngModel)]='em.empid' />
+    <br>
+    <br>Name: <input [(ngModel)]='em.empname' [disabled]='nm' />
+    <br>
+    <br>Mobile: <input [(ngModel)]='em.empmob' [disabled]='mo' />
+    <br>
+    <br>Location: <input [(ngModel)]='em.emploc' [disabled]='lo' />
+    <br><br>
+    <button (click)='add()' [disabled]='a' style="margin-right: 8px;">Add</button>
+    <button (click)='remove()' [disabled]='r' style="margin-right: 8px;">Remove</button>
+    <button (click)='modify()' [disabled]='m' >Modify</button>
+    <br><br>
+    <!-- <p *ngFor="let it of emar">
+      <br> {{it.empid}}
+    </p> -->
+    <p>{{msg}}</p>
+    <table>
+      <thead>
+        <tr>
+          <th>EmpID</th>
+					<th>Name</th>
+					<th>Mobile</th>
+					<th>Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let it of emar'>
+          <td>{{it.empid}}</td>
+          <td>{{it.empname}}</td>
+          <td>{{it.mobileno}}</td>
+          <td>{{it.location}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+   
+    <hr>
+   
+  </div>
