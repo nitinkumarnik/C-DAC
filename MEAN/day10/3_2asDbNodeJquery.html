@@ -1,0 +1,254 @@
+<html>
+	<head>
+	<style>
+		body {
+			max-width: 900px;
+			margin: 0 auto;
+
+		}
+
+		td, th {
+			border: 1px solid #999;
+			padding: 0.5rem;
+			}
+		.hide {
+			visibility: hidden;
+		}
+
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+	$(f1);
+	
+	function f1(){
+	
+		// all disable except empid.
+		$("#mob, #loc, #add, #remove, #modify, #empname").attr("disabled", true);
+	
+		// enable/disable logic.
+		$("#empid").blur(function(){
+			var empid = $("#empid").val();
+			$("#msg").html("");
+			// alert(empid);
+			var cts = {empid: empid, empname: null, mob: null, loc: null, oper:"edlogic"};
+			// alert(JSON.stringify(cts));
+			var x = {
+				type: "post",
+				dataType: "json",
+				data: {sendit:JSON.stringify(cts)},
+				url: "/dbprocess",
+				success: function(fromServer) {
+					// alert(fromServer.status);
+					var result = "";
+					var data = fromServer.data;
+					var ed = fromServer.ed;
+					// alert(ed[0].empname);
+					$("#tab").removeClass('hide');
+
+					if (fromServer.status == 1) {
+						$("#remove, #modify, #mob, #loc, #empname").attr("disabled", false);
+						$("#add").attr("disabled", true);
+						$("#empname").val(ed[0].empname);
+						$("#mob").val(ed[0].mobileno);
+						$("#loc").val(ed[0].location);
+						// alert(empid);
+					} else if (fromServer.status == 0) {
+						$("#add, #empname, #mob, #loc").attr("disabled", false);
+						$("#remove, #modify").attr("disabled", true);
+						$("#empname, #mob, #loc").val("");
+					}	
+					
+					for (var i=0; i<data.length; ++i){
+						result += `
+							<tr>
+							<td>${data[i].empid}</td>
+							<td>${data[i].empname}</td>
+							<td>${data[i].mobileno}</td>
+							<td>${data[i].location}</td>
+							</tr>`;		
+					}
+					 $("#tablist").html(result);
+					
+				},
+				error: function(e) {
+					alert("troubled");
+				},
+			};
+			
+			$.ajax(x);
+		
+		}); // blur event -- enable/disable ends.
+	
+		
+		// add
+		$("#add").click(function(){
+			var empid = $("#empid").val();
+			var mob = $("#mob").val();
+			var loc = $("#loc").val();
+			var empname = $("#empname").val();
+			// alert(empid);
+			var cts = {empid: empid, empname: empname, mob: mob, loc: loc, oper:"add"};
+			// alert(JSON.stringify(cts));
+			var x = {
+				type: "post",
+				dataType: "json",
+				data: {sendit:JSON.stringify(cts)},
+				url: "/dbprocess",
+				success: function(fromServer) {
+					// alert(fromServer.status);
+					if (fromServer.status == 1) {
+						$("#add, #empname, #remove, #modify, #mob, #loc").attr("disabled", true);
+						$("#empid").attr("disabled", false);
+						$("#empid, #empname, #mob, #loc").val("");
+						$("#msg").html("Added to Db.");
+					} else if (fromServer.status == 0) {
+						$("#msg").html("Error: Not Added.");
+					}
+					var result = "";
+					var data = fromServer.data;
+					for (var i=0; i<data.length; ++i){
+						result += `
+							<tr>
+							<td>${data[i].empid}</td>
+							<td>${data[i].empname}</td>
+							<td>${data[i].mobileno}</td>
+							<td>${data[i].location}</td>
+							</tr>`;		
+					}
+					 $("#tablist").html(result);
+					
+				},
+				error: function(e) {
+					alert("troubled");
+				},
+			};
+			
+			$.ajax(x);
+		
+		}); // add ends.
+		
+		
+		
+		// remove
+		$("#remove").click(function(){
+			var empid = $("#empid").val();
+			// alert(empid);
+			var cts = {empid: empid, empname: null, mob: null, loc: null, oper:"remove"};
+			// alert(JSON.stringify(cts));
+			var x = {
+				type: "post",
+				dataType: "json",
+				data: {sendit:JSON.stringify(cts)},
+				url: "/dbprocess",
+				success: function(fromServer) {
+					// alert(fromServer.status);
+					if (fromServer.status == 1) {
+						$("#add, #remove, #modify, #empname, #mob, #loc").attr("disabled", true);
+						$("#empid").attr("disabled", false);
+						$("#empid, #mob, #loc, #empname").val("");
+						$("#msg").html("Removed from Db.");
+					} else if (fromServer.status == 0) {
+						$("$msg").html("Error: Not Removed.");
+					}
+					var result = "";
+					var data = fromServer.data;
+					for (var i=0; i<data.length; ++i){
+						result += `
+							<tr>
+							<td>${data[i].empid}</td>
+							<td>${data[i].empname}</td>
+							<td>${data[i].mobileno}</td>
+							<td>${data[i].location}</td>
+							</tr>`;		
+					}
+					 $("#tablist").html(result);
+					
+				},
+				error: function(e) {
+					alert("troubled");
+				},
+			};
+			
+			$.ajax(x);
+		
+		}); // remove ends
+		
+		// modify
+		$("#modify").click(function(){
+			var empid = $("#empid").val();
+			var empname = $("#empname").val();
+			var mob = $("#mob").val();
+			var loc = $("#loc").val();
+			// alert(empid);
+			var cts = {empid: empid, empname: empname, mob: mob, loc: loc, oper:"modify"};
+			// alert(JSON.stringify(cts));
+			var x = {
+				type: "post",
+				dataType: "json",
+				data: {sendit:JSON.stringify(cts)},
+				url: "/dbprocess",
+				success: function(fromServer) {
+					// alert(fromServer.status);
+					if (fromServer.status == 1) {
+						$("#add, #remove, #empname, #modify, #mob, #loc").attr("disabled", true);
+						$("#empid").attr("disabled", false);
+						$("#empid, #empname, #mob, #loc").val("");
+						$("#msg").html("Modified in Db.");
+					} else if (fromServer.status == 0) {
+						$("#msg").html("Error: Not Modified.");
+					}
+					var result = "";
+					var data = fromServer.data;
+					for (var i=0; i<data.length; ++i){
+						result += `
+							<tr>
+							<td>${data[i].empid}</td>
+							<td>${data[i].empname}</td>
+							<td>${data[i].mobileno}</td>
+							<td>${data[i].location}</td>
+							</tr>`;		
+					}
+					 $("#tablist").html(result);
+					
+				},
+				error: function(e) {
+					alert("troubled");
+				},
+			};
+			
+			$.ajax(x);
+		
+		}); // modify ends.
+		
+	
+	}; // end doc ready - f1()
+	</script>
+	</head>
+	<body>
+		<h1>Employee Db.</h1>
+		<hr>
+
+			Emp ID:<input type="text" id="empid"/><span id="msg"></span><br><br>
+			Name:<input type="text" id="empname" /><br><br>
+			Mobile :<input type="text" id="mob"/><br><br>
+			Location :<input type="text" id="loc"/><br><br>
+			<input type="button" id="add" value="Add"/>
+			<input type="button" id="remove" value="Remove"/>
+			<input type="button" id="modify" value="Modify"/>
+
+		<br><br>
+
+		<table class="hide" id="tab">
+			<thead>
+				<tr>
+					<th>EmpID</th>
+					<th>Name</th>
+					<th>Mobile</th>
+					<th>Location</th>
+				</tr>
+			</thead>
+			<tbody id="tablist">
+			</tbody>
+		</table>
+	</body>
+</html>
