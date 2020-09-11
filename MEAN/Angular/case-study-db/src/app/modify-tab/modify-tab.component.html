@@ -1,0 +1,15 @@
+<div style="text-align: center;">
+    <h1>Modify</h1>
+
+        <br>Employee Id: <input [(ngModel)]='srch.empid' />
+        <br><br>First Name: <input [(ngModel)]='srch.firstName' />
+        <br><br>Last Name: <input [(ngModel)]='srch.lastName' />
+        <br><br>Date of Birth: <input [(ngModel)]='srch.dob' />
+        <br><br>Date of Joining: <input [(ngModel)]='srch.doj' />
+        <br><br>Grade: <input [(ngModel)]='srch.grade' />
+        <br><br><button class="btn btn-primary ml-2" (click)='modify()'>Modify</button>
+
+       <h3>{{msg}}</h3>
+        <br>
+        <a routerLink='/search-options' class="btn btn-primary">Return to main</a>
+</div>

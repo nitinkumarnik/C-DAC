@@ -56,7 +56,7 @@ export class AppComponent {
     this.sobj.ajaxCall(this.val).subscribe(
       (data:Receiver) => {
         this.show = data.arrayvalues;
-        
+        // console.log(data);
         if (data.status == 1) {
           this.up = false;
           this.r = false;

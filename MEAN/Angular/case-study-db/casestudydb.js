@@ -17,19 +17,54 @@ var pool = mysql.createPool({
     database: 'test'
 });
 
+app.post("/login", (req, res) => {
+    let userid = req.body.userid;
+    let password = req.body.password;
+    // console.log(userid+ '  '+ password);
+    let sendLog = {isLogin: false};
+    pool.getConnection( (err, con) => {
+        // console.log("pool");
+        if (err) {
+            console.log("Db/Login failed.");
+        } else {
+            sql = "select * from users where userid = ?"
+                con.query(sql, [userid], (err, result) => {
+                    // console.log(result);
+                    if (err) {
+                        console.log("Query eroor");
+                    } else {
+                        if (result.length > 0) {
+                            console.log(result[0].password);
+                            if (password == result[0].password) {
+                                sendLog.isLogin = true;
+                            }
+                            
+                        } else {
+                            console.log("login Something happend");
+                        }
+                    }
+                    res.send(sendLog);
+                });
+
+        }
+
+    });
+
+});
+
 
 app.post("/dblogic", (req, res) => {
 
     console.log(req.body);
-    console.log(req.body.empid);
-    
+    // console.log(req.body.empid);
     // console.log(inobj);
     let empid = req.body.empid;
-    let empname = req.body.empname;
-    let mobileno = req.body.empmob;
-    let location = req.body.emploc;
+    let firstName = req.body.firstName;
+    let lastName = req.body.lastName;
+    let dob = req.body.dob;
+    let doj = req.body.doj;
+    let grade = req.body.grade;
     let oper = req.body.oper;
-    
     // if db failed, default send this.
     let outobj = {
         status: 0,
@@ -45,47 +80,32 @@ app.post("/dblogic", (req, res) => {
         } else {
 
             // EDlogic
-            if (oper == "blur") {
+            if (oper == "srchfn") {
                 // console.log("in edlogic");
-                sql = "select * from emp where empid = ?"
+                sql = "select * from employees where empid = ?"
                 con.query(sql, [empid], (err, result) => {
                     // console.log(result.length);
                     if (err) {
-                        console.log("Query eroor");
+                        console.log("Query error");
                     } else {
                         if (result.length > 0) {
                             outobj.status = 1;
                             outobj.ed = result;
                             // console.log(result);
                         } else {
-                            console.log("edlogic Something happend");
+                            console.log("srchfn Something happend");
                         }
                     }
                     // res.send(JSON.stringify(outobj));
                 });
             } // EDlogic ends. 
 
-            // Add to db.
-            if (oper == "add") {
-                // console.log("inside add");
-                sql = "insert into emp values (?, ?, ?, ?)";
-                con.query(sql, [empid, mobileno, location, empname], (err, result) => {
-                    // console.log(result); 
-                    if (err) {
-                         console.log("Insertion error.");
-                     } else if (result.affectedRows > 0) {
-                        console.log("1");
-                        outobj.status = 1;
-                     }
-                    //  res.send(JSON.stringify(outobj));
-                });
-            } // add ends.
-
+            
             // Modify.
             if (oper == "modify") {
                 // console.log("inside modify");
-                sql = "update emp set mobileno = ?, location = ?, empname = ? where empid = ?";
-                con.query(sql, [mobileno, location, empname, empid], (err, result) => {
+                sql = "update employees set firstName = ?, lastName = ?, dob = ?, doj = ?, grade = ? where empid = ?";
+                con.query(sql, [firstName, lastName, dob, doj, grade, empid], (err, result) => {
                     // console.log(result);
                     if (err) {
                         console.log("Modifying error.");
@@ -100,25 +120,8 @@ app.post("/dblogic", (req, res) => {
                 });
             } // modify ends.
 
-            // Remove
-            if (oper == "remove") {
-                // console.log("inside remove");
-                sql = "delete from emp where empid = ?";
-                con.query(sql, [empid], (err, result) => {
-                    if (err) {
-                        console.log("Removal error");
-                    } else {
-                        if (result.affectedRows > 0) {
-                            outobj.status = 1;
-                        } else {
-                            console.log("remove Something happend");
-                        }
-                    }
-                    // res.send(JSON.stringify(outobj));
-                });
-            }// remove ends.
-
-            sqlsel = "select empid, empname, mobileno, location from emp";
+            
+            sqlsel = "select * from employees";
             con.query(sqlsel, (err, result) => {
                 // console.log("query result");
                 if (err) {

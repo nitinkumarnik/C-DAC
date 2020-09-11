@@ -1,0 +1,39 @@
+<div style="text-align: center;">
+    <h1>Search Options</h1>
+    <br>Employee Id: <input [(ngModel)]='srch.empid' />
+    <br><br>First Name: <input [(ngModel)]='srch.firstName' />
+    <br><br>Last Name: <input [(ngModel)]='srch.lastName' />
+    <br><br>Date of Birth: <input [(ngModel)]='srch.dob' />
+    <br><br>Date of Joining: <input [(ngModel)]='srch.doj' />
+    <br><br>Grade: <input [(ngModel)]='srch.grade' />
+    <br><br><button class="btn btn-primary ml-2" (click)='search()'>Search</button>
+</div>
+<br><br>
+<div class="tab" [hidden]='isHidden'>
+    <table>
+        <thead>
+          <tr>
+                <th>EmpID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>D.O.B</th>
+                <th>D.O.J</th>
+                <th>Grade</th>
+                <th>View</th>
+                <th>Modify</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let it of emar'>
+            <td>{{it.empid}}</td>
+            <td>{{it.firstname}}</td>
+            <td>{{it.lastname}}</td>
+            <td>{{it.dob | date}}</td>
+            <td>{{it.doj | date}}</td>
+            <td>{{it.grade}}</td>
+            <td><a routerLink="/search-results" (click)="hims(it.empid)">View</a></td>
+            <td><a routerLink="/modify" (click)="hims(it.empid)">Modify</a></td>
+          </tr>
+        </tbody>
+      </table>
+</div>

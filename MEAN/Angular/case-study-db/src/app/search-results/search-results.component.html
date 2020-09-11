@@ -1,0 +1,29 @@
+<div style="text-align: center;">
+<h2>::View::</h2>
+
+<table>
+    <thead>
+      <tr>
+            <th>EmpID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>D.O.B</th>
+            <th>D.O.J</th>
+            <th>Grade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ id }}</td>
+        <td>{{ fn }}</td>
+        <td>{{ ln }}</td>
+        <td>{{ dob | date}}</td>
+        <td>{{ doj | date}}</td>
+        <td>{{ grade }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <a routerLink='/search-options' class="btn btn-primary">Return to main</a>
+
+</div>
