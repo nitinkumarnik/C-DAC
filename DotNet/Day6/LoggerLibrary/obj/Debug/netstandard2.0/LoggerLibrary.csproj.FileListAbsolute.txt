@@ -1,0 +1,9 @@
+D:\dev_practice\CDAC\DotNet\Day6\LoggerLibrary\bin\Debug\netstandard2.0\LoggerLibrary.deps.json
+D:\dev_practice\CDAC\DotNet\Day6\LoggerLibrary\bin\Debug\netstandard2.0\LoggerLibrary.dll
+D:\dev_practice\CDAC\DotNet\Day6\LoggerLibrary\bin\Debug\netstandard2.0\LoggerLibrary.pdb
+D:\dev_practice\CDAC\DotNet\Day6\LoggerLibrary\obj\Debug\netstandard2.0\LoggerLibrary.csprojAssemblyReference.cache
+D:\dev_practice\CDAC\DotNet\Day6\LoggerLibrary\obj\Debug\netstandard2.0\LoggerLibrary.AssemblyInfoInputs.cache
+D:\dev_practice\CDAC\DotNet\Day6\LoggerLibrary\obj\Debug\netstandard2.0\LoggerLibrary.AssemblyInfo.cs
+D:\dev_practice\CDAC\DotNet\Day6\LoggerLibrary\obj\Debug\netstandard2.0\LoggerLibrary.csproj.CoreCompileInputs.cache
+D:\dev_practice\CDAC\DotNet\Day6\LoggerLibrary\obj\Debug\netstandard2.0\LoggerLibrary.dll
+D:\dev_practice\CDAC\DotNet\Day6\LoggerLibrary\obj\Debug\netstandard2.0\LoggerLibrary.pdb

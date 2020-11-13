@@ -1,0 +1,5 @@
+D:\dev_practice\CDAC\DotNet\Day9\DacContractLib\DacContractLib\bin\Debug\netstandard2.0\DacContractLib.deps.json
+D:\dev_practice\CDAC\DotNet\Day9\DacContractLib\DacContractLib\bin\Debug\netstandard2.0\DacContractLib.dll
+D:\dev_practice\CDAC\DotNet\Day9\DacContractLib\DacContractLib\obj\Debug\netstandard2.0\DacContractLib.csprojAssemblyReference.cache
+D:\dev_practice\CDAC\DotNet\Day9\DacContractLib\DacContractLib\obj\Debug\netstandard2.0\DacContractLib.AssemblyInfoInputs.cache
+D:\dev_practice\CDAC\DotNet\Day9\DacContractLib\DacContractLib\obj\Debug\netstandard2.0\DacContractLib.AssemblyInfo.cs

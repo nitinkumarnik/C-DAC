@@ -1,0 +1,9 @@
+D:\dev_practice\CDAC\DotNet\Day9\ServiceLibraryDac\bin\Debug\ServiceLibraryDac.dll
+D:\dev_practice\CDAC\DotNet\Day9\ServiceLibraryDac\bin\Debug\ServiceLibraryDac.pdb
+D:\dev_practice\CDAC\DotNet\Day9\ServiceLibraryDac\bin\Debug\ContractLibraryDac.dll
+D:\dev_practice\CDAC\DotNet\Day9\ServiceLibraryDac\bin\Debug\ContractLibraryDac.pdb
+D:\dev_practice\CDAC\DotNet\Day9\ServiceLibraryDac\obj\Debug\ServiceLibraryDac.csprojAssemblyReference.cache
+D:\dev_practice\CDAC\DotNet\Day9\ServiceLibraryDac\obj\Debug\ServiceLibraryDac.csproj.CoreCompileInputs.cache
+D:\dev_practice\CDAC\DotNet\Day9\ServiceLibraryDac\obj\Debug\ServiceLibraryDac.csproj.CopyComplete
+D:\dev_practice\CDAC\DotNet\Day9\ServiceLibraryDac\obj\Debug\ServiceLibraryDac.dll
+D:\dev_practice\CDAC\DotNet\Day9\ServiceLibraryDac\obj\Debug\ServiceLibraryDac.pdb

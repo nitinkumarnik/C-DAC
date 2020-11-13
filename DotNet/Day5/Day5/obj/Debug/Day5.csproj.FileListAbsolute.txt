@@ -1,0 +1,10 @@
+D:\dev_practice\CDAC\DotNet\Day5\Day5\bin\Debug\Day5.exe.config
+D:\dev_practice\CDAC\DotNet\Day5\Day5\bin\Debug\Day5.exe
+D:\dev_practice\CDAC\DotNet\Day5\Day5\bin\Debug\Day5.pdb
+D:\dev_practice\CDAC\DotNet\Day5\Day5\bin\Debug\DacLibMath.dll
+D:\dev_practice\CDAC\DotNet\Day5\Day5\bin\Debug\DacLibMath.pdb
+D:\dev_practice\CDAC\DotNet\Day5\Day5\obj\Debug\Day5.csprojAssemblyReference.cache
+D:\dev_practice\CDAC\DotNet\Day5\Day5\obj\Debug\Day5.csproj.CoreCompileInputs.cache
+D:\dev_practice\CDAC\DotNet\Day5\Day5\obj\Debug\Day5.csproj.CopyComplete
+D:\dev_practice\CDAC\DotNet\Day5\Day5\obj\Debug\Day5.exe
+D:\dev_practice\CDAC\DotNet\Day5\Day5\obj\Debug\Day5.pdb

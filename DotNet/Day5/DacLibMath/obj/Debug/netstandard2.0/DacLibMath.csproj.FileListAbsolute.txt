@@ -1,0 +1,9 @@
+D:\dev_practice\CDAC\DotNet\Day5\DacLibMath\bin\Debug\netstandard2.0\DacLibMath.deps.json
+D:\dev_practice\CDAC\DotNet\Day5\DacLibMath\bin\Debug\netstandard2.0\DacLibMath.dll
+D:\dev_practice\CDAC\DotNet\Day5\DacLibMath\bin\Debug\netstandard2.0\DacLibMath.pdb
+D:\dev_practice\CDAC\DotNet\Day5\DacLibMath\obj\Debug\netstandard2.0\DacLibMath.csprojAssemblyReference.cache
+D:\dev_practice\CDAC\DotNet\Day5\DacLibMath\obj\Debug\netstandard2.0\DacLibMath.AssemblyInfoInputs.cache
+D:\dev_practice\CDAC\DotNet\Day5\DacLibMath\obj\Debug\netstandard2.0\DacLibMath.AssemblyInfo.cs
+D:\dev_practice\CDAC\DotNet\Day5\DacLibMath\obj\Debug\netstandard2.0\DacLibMath.csproj.CoreCompileInputs.cache
+D:\dev_practice\CDAC\DotNet\Day5\DacLibMath\obj\Debug\netstandard2.0\DacLibMath.dll
+D:\dev_practice\CDAC\DotNet\Day5\DacLibMath\obj\Debug\netstandard2.0\DacLibMath.pdb

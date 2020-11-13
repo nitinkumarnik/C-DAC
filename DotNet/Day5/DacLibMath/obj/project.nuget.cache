@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "93opYbxtL5pBNKRHIlhp0vjdm2Gq61Y9aO+k6HSIhmKf++rhQDHcFpZWwa8LFBJeN+R2M085G5VGpVYFc8jl6Q==",
+  "success": true,
+  "projectFilePath": "D:\\dev_practice\\CDAC\\DotNet\\Day5\\DacLibMath\\DacLibMath.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\shivay\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\shivay\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

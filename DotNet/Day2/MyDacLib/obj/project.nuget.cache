@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "xm3weeK6AnfuBI1zyMPWVn1W5rr197GQXLa2Ag0+sJwOJSdUKtabo/y72dwTzVfaQ5ajVbSC20AMQsN719es8w==",
+  "success": true,
+  "projectFilePath": "D:\\dev_practice\\CDAC\\DotNet\\Day2\\MyDacLib\\MyDacLib.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\shivay\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\shivay\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

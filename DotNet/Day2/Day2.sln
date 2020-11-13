@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day2", "Day2\Day2.csproj", "{4EFB8717-3781-4FAC-B062-2ADC5855CD09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDacLib", "MyDacLib\MyDacLib.csproj", "{56D27BBD-8923-4B39-9B40-4D12415F3179}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4EFB8717-3781-4FAC-B062-2ADC5855CD09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EFB8717-3781-4FAC-B062-2ADC5855CD09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EFB8717-3781-4FAC-B062-2ADC5855CD09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EFB8717-3781-4FAC-B062-2ADC5855CD09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56D27BBD-8923-4B39-9B40-4D12415F3179}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56D27BBD-8923-4B39-9B40-4D12415F3179}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56D27BBD-8923-4B39-9B40-4D12415F3179}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56D27BBD-8923-4B39-9B40-4D12415F3179}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {19231EB9-3FF3-4304-A802-9BC42A744262}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,7 @@
+D:\dev_practice\CDAC\DotNet\firstRide\firstRide\bin\Debug\firstRide.exe.config
+D:\dev_practice\CDAC\DotNet\firstRide\firstRide\bin\Debug\firstRide.exe
+D:\dev_practice\CDAC\DotNet\firstRide\firstRide\bin\Debug\firstRide.pdb
+D:\dev_practice\CDAC\DotNet\firstRide\firstRide\obj\Debug\firstRide.csprojAssemblyReference.cache
+D:\dev_practice\CDAC\DotNet\firstRide\firstRide\obj\Debug\firstRide.csproj.CoreCompileInputs.cache
+D:\dev_practice\CDAC\DotNet\firstRide\firstRide\obj\Debug\firstRide.exe
+D:\dev_practice\CDAC\DotNet\firstRide\firstRide\obj\Debug\firstRide.pdb

@@ -1,0 +1,9 @@
+D:\dev_practice\CDAC\DotNet\Day5\DacApp\AccountsLibrary\bin\Debug\netstandard2.0\AccountsLibrary.deps.json
+D:\dev_practice\CDAC\DotNet\Day5\DacApp\AccountsLibrary\bin\Debug\netstandard2.0\AccountsLibrary.dll
+D:\dev_practice\CDAC\DotNet\Day5\DacApp\AccountsLibrary\bin\Debug\netstandard2.0\AccountsLibrary.pdb
+D:\dev_practice\CDAC\DotNet\Day5\DacApp\AccountsLibrary\obj\Debug\netstandard2.0\AccountsLibrary.csprojAssemblyReference.cache
+D:\dev_practice\CDAC\DotNet\Day5\DacApp\AccountsLibrary\obj\Debug\netstandard2.0\AccountsLibrary.AssemblyInfoInputs.cache
+D:\dev_practice\CDAC\DotNet\Day5\DacApp\AccountsLibrary\obj\Debug\netstandard2.0\AccountsLibrary.AssemblyInfo.cs
+D:\dev_practice\CDAC\DotNet\Day5\DacApp\AccountsLibrary\obj\Debug\netstandard2.0\AccountsLibrary.csproj.CoreCompileInputs.cache
+D:\dev_practice\CDAC\DotNet\Day5\DacApp\AccountsLibrary\obj\Debug\netstandard2.0\AccountsLibrary.dll
+D:\dev_practice\CDAC\DotNet\Day5\DacApp\AccountsLibrary\obj\Debug\netstandard2.0\AccountsLibrary.pdb

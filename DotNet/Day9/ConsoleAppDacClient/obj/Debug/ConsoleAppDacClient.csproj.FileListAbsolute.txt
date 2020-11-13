@@ -1,0 +1,10 @@
+D:\dev_practice\CDAC\DotNet\Day9\ConsoleAppDacClient\bin\Debug\ConsoleAppDacClient.exe.config
+D:\dev_practice\CDAC\DotNet\Day9\ConsoleAppDacClient\bin\Debug\ConsoleAppDacClient.exe
+D:\dev_practice\CDAC\DotNet\Day9\ConsoleAppDacClient\bin\Debug\ConsoleAppDacClient.pdb
+D:\dev_practice\CDAC\DotNet\Day9\ConsoleAppDacClient\bin\Debug\ContractLibraryDac.dll
+D:\dev_practice\CDAC\DotNet\Day9\ConsoleAppDacClient\bin\Debug\ContractLibraryDac.pdb
+D:\dev_practice\CDAC\DotNet\Day9\ConsoleAppDacClient\obj\Debug\ConsoleAppDacClient.csprojAssemblyReference.cache
+D:\dev_practice\CDAC\DotNet\Day9\ConsoleAppDacClient\obj\Debug\ConsoleAppDacClient.csproj.CoreCompileInputs.cache
+D:\dev_practice\CDAC\DotNet\Day9\ConsoleAppDacClient\obj\Debug\ConsoleAppDacClient.csproj.CopyComplete
+D:\dev_practice\CDAC\DotNet\Day9\ConsoleAppDacClient\obj\Debug\ConsoleAppDacClient.exe
+D:\dev_practice\CDAC\DotNet\Day9\ConsoleAppDacClient\obj\Debug\ConsoleAppDacClient.pdb

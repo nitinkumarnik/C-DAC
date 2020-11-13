@@ -1,0 +1,5 @@
+D:\dev_practice\CDAC\DotNet\Day9\ContractLibraryDac\bin\Debug\ContractLibraryDac.dll
+D:\dev_practice\CDAC\DotNet\Day9\ContractLibraryDac\bin\Debug\ContractLibraryDac.pdb
+D:\dev_practice\CDAC\DotNet\Day9\ContractLibraryDac\obj\Debug\ContractLibraryDac.csproj.CoreCompileInputs.cache
+D:\dev_practice\CDAC\DotNet\Day9\ContractLibraryDac\obj\Debug\ContractLibraryDac.dll
+D:\dev_practice\CDAC\DotNet\Day9\ContractLibraryDac\obj\Debug\ContractLibraryDac.pdb

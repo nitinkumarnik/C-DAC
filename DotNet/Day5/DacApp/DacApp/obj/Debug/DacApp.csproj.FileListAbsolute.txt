@@ -1,0 +1,10 @@
+D:\dev_practice\CDAC\DotNet\Day5\DacApp\DacApp\bin\Debug\DacApp.exe.config
+D:\dev_practice\CDAC\DotNet\Day5\DacApp\DacApp\bin\Debug\DacApp.exe
+D:\dev_practice\CDAC\DotNet\Day5\DacApp\DacApp\bin\Debug\DacApp.pdb
+D:\dev_practice\CDAC\DotNet\Day5\DacApp\DacApp\bin\Debug\AccountsLibrary.dll
+D:\dev_practice\CDAC\DotNet\Day5\DacApp\DacApp\bin\Debug\AccountsLibrary.pdb
+D:\dev_practice\CDAC\DotNet\Day5\DacApp\DacApp\obj\Debug\DacApp.csprojAssemblyReference.cache
+D:\dev_practice\CDAC\DotNet\Day5\DacApp\DacApp\obj\Debug\DacApp.csproj.CoreCompileInputs.cache
+D:\dev_practice\CDAC\DotNet\Day5\DacApp\DacApp\obj\Debug\DacApp.csproj.CopyComplete
+D:\dev_practice\CDAC\DotNet\Day5\DacApp\DacApp\obj\Debug\DacApp.exe
+D:\dev_practice\CDAC\DotNet\Day5\DacApp\DacApp\obj\Debug\DacApp.pdb
